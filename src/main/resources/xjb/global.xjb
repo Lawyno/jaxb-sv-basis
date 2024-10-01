@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jaxb:bindings xmlns:xs="http://www.w3.org/2001/XMLSchema"
+               xmlns:jaxb="http://java.sun.com/xml/ns/jaxb"
+               xmlns:xjc="http://java.sun.com/xml/ns/jaxb/xjc"
+               jaxb:extensionBindingPrefixes="xjc"
+               version="2.1">
+
+    <jaxb:globalBindings typesafeEnumMemberName="generateName">
+        <xjc:simple />
+
+        <!-- Integer statt BigInteger -->
+        <xjc:javaType name="java.lang.Integer" xmlType="xs:integer"
+                      adapter="de.lawyno.xml.adapter.IntegerXmlAdapter" />
+        <xjc:javaType name="java.lang.Integer" xmlType="xs:positiveInteger"
+                      adapter="de.lawyno.xml.adapter.IntegerXmlAdapter" />
+
+        <!-- java.time.* statt XMLGregorianCalendar -->
+        <xjc:javaType name="java.time.LocalDate" xmlType="xs:date"
+                      adapter="com.migesok.jaxb.adapter.javatime.LocalDateXmlAdapter" />
+        <xjc:javaType name="java.time.LocalDateTime" xmlType="xs:dateTime"
+                      adapter="com.migesok.jaxb.adapter.javatime.LocalDateTimeXmlAdapter" />
+    </jaxb:globalBindings>
+
+</jaxb:bindings>

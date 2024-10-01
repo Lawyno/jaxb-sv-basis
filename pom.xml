@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>de.lawyno.xml</groupId>
+    <artifactId>xml-sv-basis</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+    <properties>
+        <maven.compiler.source>8</maven.compiler.source>
+        <maven.compiler.target>8</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+        <!-- 3rd-party -->
+        <javax.mail-api.version>1.6.2</javax.mail-api.version>
+        <jaxb-api.version>2.3.1</jaxb-api.version>
+        <jaxb-java-time-adapters.version>1.1.3</jaxb-java-time-adapters.version>
+        <org.eclipse.persistence.version>2.7.11</org.eclipse.persistence.version>
+
+        <!-- Test dependencies -->
+        <junit-jupiter.version>5.10.3</junit-jupiter.version>
+        <assertj-core.version>3.26.3</assertj-core.version>
+    </properties>
+
+    <dependencies>
+
+        <!-- JAXB API -->
+        <dependency>
+            <groupId>javax.xml.bind</groupId>
+            <artifactId>jaxb-api</artifactId>
+            <version>${jaxb-api.version}</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <!-- Java Mail API (for MimeMultipart attachments) -->
+        <dependency>
+            <groupId>javax.mail</groupId>
+            <artifactId>javax.mail-api</artifactId>
+            <version>${javax.mail-api.version}</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <!-- Java Time Adapter for JAXB -->
+        <dependency>
+            <groupId>com.migesok</groupId>
+            <artifactId>jaxb-java-time-adapters</artifactId>
+            <version>${jaxb-java-time-adapters.version}</version>
+        </dependency>
+
+        <!-- EclipseLink MOXy -->
+        <dependency>
+            <groupId>org.eclipse.persistence</groupId>
+            <artifactId>org.eclipse.persistence.moxy</artifactId>
+            <version>${org.eclipse.persistence.version}</version>
+        </dependency>
+
+        <!-- Test -->
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter</artifactId>
+            <version>${junit-jupiter.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.assertj</groupId>
+            <artifactId>assertj-core</artifactId>
+            <version>${assertj-core.version}</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+</project>
